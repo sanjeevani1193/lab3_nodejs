@@ -8,16 +8,6 @@
     "dev": "nodemon app.js",
     "debug": "nodemon --inspect app.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ysmr2000/lab03-nodejs-resources.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ysmr2000/lab03-nodejs-resources/issues"
-  },
-  "homepage": "https://github.com/ysmr2000/lab03-nodejs-resources#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "duv": "^0.1.0",
@@ -25,7 +15,9 @@
     "express": "^4.17.1",
     "express-session": "^1.17.2",
     "mysql": "^2.18.1",
+    "name": "^0.0.2",
     "nodemon": "^2.0.15",
-    "session":"^0.1.0"
+    "package": "^1.0.1",
+    "session": "^0.1.0"
   }
 }

@@ -15,6 +15,7 @@ router.get('/api/clientDetails', clientController.getClient);
 //route for listing all products
 router.get('/api/catalog', productController.getCatalog);
 router.get('/api/article/:id', productController.getProductByID);
+router.get('/api/clients', clientController.getClient);
 
 //export router
 module.exports = router;

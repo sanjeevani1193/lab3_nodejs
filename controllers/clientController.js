@@ -24,7 +24,12 @@ const loginControl = (request, response) => {
             //add to session
             request.session.user = username;
             request.session.num_client = client[0].num_client;
-            request.session.admin = false;
+            if (username=="Sanjeevani"){
+              request.session.admin=true;
+            }
+            else {
+              request.session.admin=false;
+            }
             response.render('postLogin', { username: username }); 
           }
         }
@@ -98,9 +103,15 @@ const getClientByNumclient = (request, response) => {
 };
 
 const getClient = (request, response) => {
-  const clientServices = require('../services/clientServices');
-  let username = request.params.username;
-  let num_client;
+  const database = require('../db/dbQuery');
+  if (request.session.admin){
+    const selectionClient="select * from client";
+    database.getResult(selectClient, function (err, rows){
+    if (!err) {
+      response.render('clients_admin', {user:rows})
+    }
+    });
+  };
 
   clientServices.searchUsername(username, function(err, rows) {
       num_client = rows[0].num_client
